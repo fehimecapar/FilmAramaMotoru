@@ -4,7 +4,8 @@ import os_connection
 
 client = os_connection.connection()
 
-text = input("please enter basic summary for film: ")
+# text = input("please enter basic summary for film: ")
+text = " As a child Juan Gallardo (Rex Downing – young boy) wants only to become a bullfighter like his dead father."
 
 search_text = text_embedding.text_embed(text)
 
@@ -22,7 +23,7 @@ query = {
                   "fields": ["_id", "title"],      
       }
 try:
-    if "error" not in client: 
+    # if "error" not in client: 
         response = client.search(body=query, index="film_arsiv_sistemi")
         pprint(response["hits"]["hits"])
 
